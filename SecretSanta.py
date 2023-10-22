@@ -71,7 +71,7 @@ def writeFiles(assignments):
 def main():
 
     inList = open('inList.txt').read().splitlines()
-    badPairs = [(i.split()[0], i.split()[1]) for i in open('badPairs.txt', 'r').readlines()]
+    badPairs = [(i.split(';')[0], i.split(';')[1]) for i in open('badPairs.txt', 'r').readlines()]
 
     
     for i in badPairs:  #make sure all entires in badList are also in inList and add them if they aren't and warn user
