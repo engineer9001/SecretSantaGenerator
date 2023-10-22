@@ -1,3 +1,3 @@
-Dalton Haley
-Tom Kristi
-Abbie Jenna
+Dalton;Haley
+Tom;Kristi
+Abbie;Jenna
