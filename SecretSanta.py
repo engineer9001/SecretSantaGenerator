@@ -87,7 +87,7 @@ def main():
 
     assignments = assign(inList, badPairs, badList)   #DO IT!!!
     writeFiles(assignments)   #write the results to text files
-    print(assignments)   #prototyping comment out before final run
+    #print(assignments)   #prototyping comment out before final run
 
 if __name__ == '__main__':
     main()
