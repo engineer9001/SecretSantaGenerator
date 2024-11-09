@@ -25,8 +25,8 @@ def assign(inList, badPairs, badListCheck):
 
     assignments = {k:v for (k,v) in zip(inList, outlist)}
 
-    if badListCheck(assignments, badPairs):
-        try:
+    if badListCheck(assignments, badPairs):     
+        try:                                        #egregious way to force it to keep trying even after many recursive calls
             return assign(inList, badPairs, badListCheck)
         except:
             return assign(inList, badPairs, badListCheck)
@@ -36,7 +36,7 @@ def assign(inList, badPairs, badListCheck):
 def badList(assignments, badPairs):
     """Takes a dictionary of assignee:assignment and
     a list of tuples of unwanted assignment pairs and returns true
-    if anyone is assigned to themselvesor any member of a bad pair
+    if anyone is assigned to themselves or any member of a bad pair
     has the other member of the baid pair (for couples) or any 'closed
     circuits of 2' (if x has y, y can't have x)"""
     for i in assignments:
@@ -71,7 +71,7 @@ def writeFiles(assignments):
 def main():
 
     inList = open('inList.txt').read().splitlines()
-    badPairs = [(i.split(';')[0], i.split(';')[1]) for i in open('badPairs.txt', 'r').readlines()]
+    badPairs = [(i.split(';')[0], i.split(';')[1][:-1]) for i in open('badPairs.txt', 'r').readlines()]
 
     
     for i in badPairs:  #make sure all entires in badList are also in inList and add them if they aren't and warn user
